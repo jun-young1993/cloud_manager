@@ -1,5 +1,7 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
+import { ScsmInterface } from 'utill/interfaces';
+
 export type Channels = 'ipc-example';
 
 const electronHandler = {
@@ -22,6 +24,11 @@ const electronHandler = {
   },
 };
 
+const scsmHandler: ScsmInterface = {
+  app: null as any,
+};
+
 contextBridge.exposeInMainWorld('electron', electronHandler);
+contextBridge.exposeInMainWorld('scsm', scsmHandler);
 
 export type ElectronHandler = typeof electronHandler;

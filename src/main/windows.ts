@@ -1,4 +1,9 @@
-import { BrowserWindow, BrowserWindowConstructorOptions, app, shell } from 'electron';
+import {
+  BrowserWindow,
+  BrowserWindowConstructorOptions,
+  app,
+  shell,
+} from 'electron';
 import path from 'path';
 import { getAssetPath, resolveHtmlPath } from './util';
 

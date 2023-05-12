@@ -1,13 +1,20 @@
-import React from 'react';
 import 'tailwindcss/tailwind.css';
+import { Rendererd } from 'utill/interfaces';
+// eslint-disable-next-line import/no-cycle
+
+
 export default class App {
-  public async setUp(): Promise<void | Element | React.Component> {
-    // const React = await import('react');
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor, @typescript-eslint/no-empty-function
+  constructor() {}
+
+  // eslint-disable-next-line class-methods-use-this
+  public async setUp(): Rendererd {
     const { render } = await import('react-dom');
+    const { Header } = await import('./components/header');
     const app = (
-      <div className="text-center border-solid border-4 border-red-500 bg-black text-white shadow">
-      ERB + TAILWIND = ❤
-    </div>
+      <div className="container">
+        <Header />
+      </div>
     );
     const rendered = render(app, document.getElementById('root'));
     return rendered;
