@@ -1,50 +1,15 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
-
-const Hello = () => {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
+import React from 'react';
+import 'tailwindcss/tailwind.css';
+export default class App {
+  public async setUp(): Promise<void | Element | React.Component> {
+    // const React = await import('react');
+    const { render } = await import('react-dom');
+    const app = (
+      <div className="text-center border-solid border-4 border-red-500 bg-black text-white shadow">
+      ERB + TAILWIND = ❤
     </div>
-  );
-};
-
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
-  );
+    );
+    const rendered = render(app, document.getElementById('root'));
+    return rendered;
+  }
 }
