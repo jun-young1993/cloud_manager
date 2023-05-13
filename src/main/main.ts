@@ -1,4 +1,4 @@
-import { BrowserWindow, app } from 'electron';
+import { BrowserWindow, app, ipcMain } from "electron";
 import { getOrCreateMainWindow } from './windows';
 
 /**
@@ -18,6 +18,17 @@ const onReady = async () => {
 function main() {
   // eslint-disable-next-line promise/catch-or-return
   app.whenReady().then(onReady).catch(console.log);
+  app.on('window-all-closed', () => {
+    // Respect the OSX convention of having the application in memory even
+    // after all windows have been closed
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
+  });
 }
-
+ipcMain.on('ipc-example', async (event, arg) => {
+  const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
+  console.log(msgTemplate(arg));
+  event.reply('ipc-example', msgTemplate('pong'));
+});
 main();

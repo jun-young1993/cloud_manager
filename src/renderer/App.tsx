@@ -1,11 +1,9 @@
 import 'tailwindcss/tailwind.css';
 import { Rendererd } from 'utill/interfaces';
-// eslint-disable-next-line import/no-cycle
-
 
 export default class App {
   // eslint-disable-next-line @typescript-eslint/no-useless-constructor, @typescript-eslint/no-empty-function
-  constructor() {}
+  // constructor() {}
 
   // eslint-disable-next-line class-methods-use-this
   public async setUp(): Rendererd {

@@ -5,7 +5,8 @@ export class Header extends React.Component {
   public render() {
     return (
       <>
-        <header>header</header>
+        <header>
+        </header>
       </>
     );
   }

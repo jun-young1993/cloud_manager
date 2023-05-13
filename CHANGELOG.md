@@ -193,7 +193,7 @@ Yay! Another patch release. This release mostly includes refactorings and router
 
 #### Breaking
 
-- **Renamed `./src/main.development.js` => `./src/main.{dev,prod}.js`:** [#963](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/963)
+- **Renamed `./src/_main.development.js` => `./src/_main.{dev,prod}.js`:** [#963](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/963)
 
 #### Fixes
 
@@ -257,7 +257,7 @@ Here's the most notable changes since `v0.10.0`. Its been about a year since a r
 
 #### Improvements
 
-- **Parallelize renderer and main build processes when running `npm run build`**
+- **Parallelize renderer and _main build processes when running `npm run build`**
 - **Dynamically generate electron app menu**
 - **Improved vscode integration:** [#856](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/856)
 
@@ -269,7 +269,7 @@ Here's the most notable changes since `v0.10.0`. Its been about a year since a r
 
 #### Improvements
 
-- **Use Babel in main process with Webpack build:** [#201](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/201)
+- **Use Babel in _main process with Webpack build:** [#201](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/201)
 - **Change targets to built-in support by webpack:** [#197](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/197)
 - **use es2015 syntax for webpack configs:** [#195](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/195)
 - **Open application when webcontent is loaded:** [#192](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/192)

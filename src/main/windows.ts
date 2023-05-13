@@ -17,7 +17,7 @@ export let browserWindows: Array<BrowserWindow | null> = [];
  */
 export const getMainWindowOptions = (): BrowserWindowConstructorOptions => {
   return {
-    show: true,
+    show: false,
     width: 1024,
     height: 728,
     icon: getAssetPath('icon.png'),
@@ -56,7 +56,16 @@ export const createMainWindow = (): BrowserWindow => {
     return { action: 'deny' };
   });
 
+  browserWindow.on('ready-to-show', () => {
+    if (!browserWindow) {
+      throw new Error('"mainWindow" is not defined');
+    }
+    browserWindow.show();
+  });
+
   browserWindow.webContents.on('will-navigate', (event, url) => {
+    event.preventDefault();
+
     event.preventDefault();
     shell.openExternal(url);
   });

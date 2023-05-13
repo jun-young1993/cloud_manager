@@ -5,5 +5,5 @@ export interface AppInterface {
   setUp: () => Rendererd;
 }
 export interface ScsmInterface {
-  app: AppInterface;
+  app: AppInterface | null;
 }
